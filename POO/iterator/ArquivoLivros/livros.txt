@@ -1,0 +1,6 @@
+O Hobbit,J.R.R.Tolkien,HarperCollins,1993
+The Lord of The Rings,J.R.R.Tolkien,George Allen & Unwin,1954
+The Silmarillion,J.R.R.Tolkien,George Allen & Unwin,1977
+The Two Towers,J.R.R.Tolkien,George Allen & Unwin,1954
+The Return of the King,J.R.R.Tolkien,George Allen & Unwin,1955
+The Fellowship of the Ring,J.R.R.Tolkien,George Allen & Unwin,1954
