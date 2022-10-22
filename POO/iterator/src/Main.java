@@ -11,38 +11,32 @@ public class Main {
 
         listaDeLivros = new ArrayListLivro();
 		date.lerDoArquivo(listaDeLivros);
-
-
         System.out.println("Printing Livros ArrayList");
 		System.out.println(
 			"---------------------------------------------------------------------------------------------------------------");
-		printBooks(listaDeLivros.iterator());
+		printLivros(listaDeLivros.iterator());
 
-
-		listaDeLivros = new ArrayLivro();
+		
+        listaDeLivros = new ArrayLivro();
 		date.lerDoArquivo(listaDeLivros);
-
-
         System.out.println("Printing Livros Vetor");
 		System.out.println(
 			"---------------------------------------------------------------------------------------------------------------");
-		printBooks(listaDeLivros.iterator());
+		printLivros(listaDeLivros.iterator());
 
 
-
-		listaDeLivros = new ListaEncadeada();
+		listaDeLivros = new ListaEncadeadaLivros();
 		date.lerDoArquivo(listaDeLivros);
-
-
         System.out.println("Printing Livros Lista Encadeada");
 		System.out.println(
 			"---------------------------------------------------------------------------------------------------------------");
-		printBooks(listaDeLivros.iterator());
+		printLivros(listaDeLivros.iterator());
+
 
 
     }
 
-    private static void printBooks(Iterator<Livro> iterator) {
+    private static void printLivros(Iterator<Livro> iterator) {
 		System.out.printf("%25s | %25s | %24s | %25s |\n", "Titulo", "Autor", "Publicadora", "Ano Publicacao");
 		System.out.println(
 				"---------------------------------------------------------------------------------------------------------------");

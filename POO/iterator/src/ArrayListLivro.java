@@ -11,7 +11,7 @@ public class ArrayListLivro implements ColecaoLivros {
 	}
     @Override
     public Iterator<Livro> iterator() {
-        return livros.iterator();
+        return new IteradorArrayList(livros);
     }
 
     @Override

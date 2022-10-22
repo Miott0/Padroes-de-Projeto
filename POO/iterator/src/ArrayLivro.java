@@ -25,16 +25,8 @@ public class ArrayLivro implements ColecaoLivros {
         
     }
 
-    public Livro[] getLivros(){
-        return livros;
-    }
-
     @Override
     public Iterator<Livro> iterator() {
         return new IteradorLivro(livros);
-    }
-
-
-
-    
+    }   
 }
