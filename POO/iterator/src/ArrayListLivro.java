@@ -1,6 +1,5 @@
 package src;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class ArrayListLivro implements ColecaoLivros {
 
@@ -10,7 +9,7 @@ public class ArrayListLivro implements ColecaoLivros {
 		livros = new ArrayList<Livro>();
 	}
     @Override
-    public Iterator<Livro> iterator() {
+    public Iterador iterator() {
         return new IteradorArrayList(livros);
     }
 

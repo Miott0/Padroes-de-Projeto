@@ -10,7 +10,6 @@ public class Armazenamento {
         lista.add(memento);
 
     }
-
     public FichaMemento get(int posicao){
         return lista.get(posicao);
     }

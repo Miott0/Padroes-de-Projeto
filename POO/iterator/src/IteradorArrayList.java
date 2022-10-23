@@ -1,12 +1,10 @@
 package src;
-
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
-public class IteradorArrayList implements Iterator<Livro>{
+public class IteradorArrayList implements Iterador{
     private List<Livro> livros = new ArrayList<>();
-    int posicaoAtual = 0;
+    public int posicaoAtual = 0;
 
     public IteradorArrayList(ArrayList<Livro> livros){
         this.livros= livros; 
@@ -26,6 +24,4 @@ public class IteradorArrayList implements Iterator<Livro>{
         posicaoAtual++;
         return l;
     }
-
-
 }

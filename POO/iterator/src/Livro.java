@@ -3,8 +3,7 @@ public class Livro{
     private String titulo, autor, publicadora;
     private int ano;
 
-
-
+    
     public Livro(){   
     }
 

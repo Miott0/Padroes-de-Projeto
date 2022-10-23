@@ -25,18 +25,9 @@ public class Main {
 		printLivros(listaDeLivros.iterator());
 
 
-		listaDeLivros = new ListaEncadeadaLivros();
-		date.lerDoArquivo(listaDeLivros);
-        System.out.println("Printing Livros Lista Encadeada");
-		System.out.println(
-			"---------------------------------------------------------------------------------------------------------------");
-		printLivros(listaDeLivros.iterator());
-
-
-
     }
 
-    private static void printLivros(Iterator<Livro> iterator) {
+    private static void printLivros(Iterador iterator) {
 		System.out.printf("%25s | %25s | %24s | %25s |\n", "Titulo", "Autor", "Publicadora", "Ano Publicacao");
 		System.out.println(
 				"---------------------------------------------------------------------------------------------------------------");

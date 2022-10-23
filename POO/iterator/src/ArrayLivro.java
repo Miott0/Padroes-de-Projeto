@@ -1,20 +1,19 @@
 package src;
-import java.util.Iterator;
 
 public class ArrayLivro implements ColecaoLivros {
-    protected static int MAX_LIVROS = 500;
+    private int max_livros = 500;
     private int totalLivros;
-    protected Livro[] livros; 
+    private Livro[] livros; 
 
 
     public ArrayLivro(){
-        this.livros = new Livro[MAX_LIVROS];
+        this.livros = new Livro[max_livros];
         this.totalLivros = 0;
     }
 
     @Override
     public boolean addLivro(Livro livro) {
-        if(totalLivros <(MAX_LIVROS-1)){
+        if(totalLivros <(max_livros-1)){
             livros[totalLivros++] = livro;
             return true;
         }
@@ -22,11 +21,10 @@ public class ArrayLivro implements ColecaoLivros {
             System.out.println("Lista Completa");
             return false;
         }
-        
     }
 
     @Override
-    public Iterator<Livro> iterator() {
-        return new IteradorLivro(livros);
+    public Iterador iterator(){
+        return new IteradorArrayLivro(livros);
     }   
 }
