@@ -2,48 +2,61 @@ package memento.src;
 
 public class Ficha {
 
-    private String email, nome, sobrenome, senha;
-    public int quantidadeFichas = 0;
+    private String nome, sobrenome;
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
    
-    public Ficha(String email, String nome, String sobrenome, String senha) {
-        this.email = email;
+
+    public Ficha(){
+
+    }
+    public Ficha(String nome, String sobrenome){
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this.senha = senha;
     }
 
-    public int getQuantidaFichas() {
-        return quantidadeFichas;
-    }
-
-    public void alterarValor(String email, String nome, String sobrenome, String senha){
-        this.email = email;
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.senha = senha;
+    public void alterarValor(Ficha ficha){
+        this.nome = ficha.nome;
+        this.sobrenome = ficha.sobrenome;
     }
   
   
-    public FichaMemento salvarEstado() {
-        var estado = new FichaMemento();
-        estado.setEmail(email);
-        estado.setNome(nome);
-        estado.setSobrenome(sobrenome);
-        estado.setSenha(senha);
-        quantidadeFichas++;
+    public Memento salvarEstado() {
+        Ficha a = new Ficha();
+
+        a.nome = this.nome;
+        a.sobrenome = this.sobrenome;
+        var estado = new Memento(a);
         return estado;
     }
   
-    public void recuperarEstado(FichaMemento memento) {
-      var estado = memento;
-      this.email = estado.getEmail();
-      this.nome = estado.getNome();
-      this.sobrenome = estado.getSobrenome();
-      this.senha = estado.getSenha();
+    public void recuperarEstado(Memento memento) {
+        var estado = memento != null ? memento.recuperarFichaSalva() : null;
+        alterarValor(estado);
+      
     }
   
     @Override
     public String toString() {
-      return String.format("nome: %s sobrenome: %s email: %s senha: %s", nome, sobrenome, email, senha);
+        return String.format("nome: %s sobrenome: %s ", nome, sobrenome);
+    }
+    
+
+    public static class Memento{
+        private Ficha ficha;
+
+        private Memento(Ficha fichaSalva){
+            ficha = fichaSalva;
+        }
+
+        private Ficha recuperarFichaSalva(){
+            return ficha;
+        }
     }
 }

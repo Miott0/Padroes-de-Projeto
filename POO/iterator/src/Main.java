@@ -1,7 +1,6 @@
 package src;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException {
@@ -17,7 +16,7 @@ public class Main {
 		printLivros(listaDeLivros.iterator());
 
 		
-        listaDeLivros = new ArrayLivro();
+        listaDeLivros = new VetorLivro();
 		date.lerDoArquivo(listaDeLivros);
         System.out.println("Printing Livros Vetor");
 		System.out.println(

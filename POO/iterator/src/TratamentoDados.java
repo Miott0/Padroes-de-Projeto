@@ -24,12 +24,8 @@ public class TratamentoDados {
 			
 			while (linhaLidaDoArquivo != null) {
 				listaDeCampos = linhaLidaDoArquivo.split(",");
-					
-				
 				livro = new Livro(listaDeCampos[0], listaDeCampos[1], listaDeCampos[2], Integer.parseInt(listaDeCampos[3]));
 				listaLivros.addLivro(livro);
-
-					
 				linhaLidaDoArquivo = leituraBufferizada.readLine();
 			}
 			
